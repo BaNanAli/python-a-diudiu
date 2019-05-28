@@ -1,0 +1,13 @@
+import difflib
+import sys
+f1=open('data1.txt','r')
+f2=open('data2.txt','r')
+text1=f1.read()
+text2=f2.read()
+text1_lines=text1.splitlines()#以行切割
+text2_lines=text2.splitlines()#以行切割
+f1.close()
+f2.close()
+d=difflib.Differ()#创建比较对象
+diff=d.compare(text1_lines,text2_lines)#比较两个变量
+print ('\n'.join(list(diff)))
