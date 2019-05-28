@@ -1,0 +1,13 @@
+import difflib
+import sys
+f1=open('data1.txt','r')
+f2=open('data2.txt','r')
+text1=f1.read()
+text2=f2.read()
+text1_lines=text1.splitlines()
+text2_lines=text2.splitlines()
+f1.close()
+f2.close()
+d=difflib.HtmlDiff()#创建网页对象
+print (d.make_file(text1_lines,text2_lines))
+
